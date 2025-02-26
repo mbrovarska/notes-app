@@ -3,8 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import { ThemeProvider } from "@material-tailwind/react"
+import MaterialButton from './components/button.tsx'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+      <MaterialButton/>
+    </ThemeProvider>
   </StrictMode>,
 )
