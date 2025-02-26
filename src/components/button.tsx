@@ -3,9 +3,9 @@ import { Button, ButtonProps } from "@material-tailwind/react";
 interface Props extends ButtonProps {
     children: React.ReactNode;
  };
- 
- const MaterialButton = ({ children, ...restProps }: Props) => {
-   return <Button {...restProps}>{children}</Button>;
+  
+ const FormButton = ({ title }: {title: string}) => {
+   return <Button>{title}</Button>;
  };
  
- export default MaterialButton;
+ export default FormButton;

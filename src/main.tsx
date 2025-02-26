@@ -4,13 +4,11 @@ import './index.css'
 import App from './App.tsx'
 
 import { ThemeProvider } from "@material-tailwind/react"
-import MaterialButton from './components/button.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
       <App />
-      <MaterialButton/>
     </ThemeProvider>
   </StrictMode>,
 )
