@@ -28,8 +28,70 @@ const SignUpForm = () => {
             .required("This field is required!"),
         });
     }
+    const initialValues ={
+        email: "",
+        password: ""
+    };
 
-    
+    return (
+        <Formik 
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={}
+        >
+        <Form>
+            {
+                !successful && (
+                <div>
+                  <div className="form-group">
+                  <label htmlFor="email"> Email </label>
+                  <Field name="email" type="email" className="form-control" />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="alert alert-danger"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="password"> Password </label>
+                  <Field
+                    name="password"
+                    type="password"
+                    className="form-control"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="alert alert-danger"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                </div>
+              </div>
+
+                )
+            }
+
+            {
+                message && (
+                    <div className="form-group">
+                  <div
+                    className={
+                      successful ? "alert alert-success" : "alert alert-danger"
+                    }
+                    role="alert"
+                  >
+                    {message}
+                  </div>
+                </div>
+                )
+            }
+        </Form>
+        </Formik>
+    )
 
 }
 
